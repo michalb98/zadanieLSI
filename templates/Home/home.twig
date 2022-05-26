@@ -1,0 +1,42 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Raporty{% endblock %}
+
+{% block header %}
+    Raporty     
+{% endblock %}
+
+{% block body %}
+    <div id="conatiner">
+        <div id="menu">
+            <form method="POST">
+                <lable>Lokal: 
+                    <select name="place" id="place">
+                        <option value="Lokal 1">Lokal 1</option>
+                        <option value="Lokal 2">Lokal 2</option>
+                        <option value="Lokal 3">Lokal 3</option>
+                    </select>
+                </lable>
+                <lable> Od: <input type="date" name="od"></lable>
+                <lable> Do: <input type="date" name="do"></lable>
+                <input type="submit" value="Zatwierdź">
+            </form>
+        </div>
+        <div id="grid">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nazwa</th>
+                        <th>Data</th>
+                        <th>Godzina</th>
+                        <th>Użytkownik</th>
+                        <th>Lokal</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{ html|raw }}
+                </tbody>
+            </table>
+        </div>
+    </div> 
+{% endblock %}
